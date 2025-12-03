@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laravel Tutorials - LaravelSolutionStuff</title>
+<link rel="stylesheet" href="css/global.css" />
+<style>
+    /* Container & main layout */
+    .main-content {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .grid-container {
+        flex: 3;
+    }
+
+    .sidebar {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    /* Tutorials Grid: 3 columns with gap */
+    .tutorials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr; /* make rows equal height */
+        gap: 30px 30px; /* row-gap 30px, column-gap 30px */
+        padding: 20px 0;
+    }
+
+    @media (max-width: 968px) {
+        .tutorials-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Card styling */
+    .post-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: box-shadow 0.3s;
+    }
+
+    .post-card:hover {
+        box-shadow: 0 5px 15px rgba(245, 48, 3, 0.1);
+    }
+
+    .post-title {
+        font-size: 20px;
+        color: #f53003;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-decoration: none;
+    }
+
+    .post-title:hover {
+        text-decoration: underline;
+    }
+
+    .post-meta {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .post-meta span {
+        margin-right: 15px;
+    }
+
+    .post-excerpt {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        flex-grow: 1; /* Stretch to make equal height descriptions */
+    }
+
+    .read-more {
+        color: #f53003;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .read-more:hover {
+        text-decoration: underline;
+    }
+
+    /* Pagination styling */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 10px;
+    }
+
+    .pagination a {
+        padding: 8px 15px;
+        border: 1px solid #f53003;
+        background: #fff;
+        color: #f53003;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .pagination a:hover,
+    .pagination a.active {
+        background-color: #f53003;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+<header>
+    
+    <div class="container">
+        <div class="header-content">
+            <a href="index.html" class="logo">LaravelSolutionStuff</a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="laravel-list.html">Laravel Tutorial</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" placeholder="Search Laravel tutorials...">
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+
+<div class="container">
+    <div class="main-content">
+        <!-- Tutorials Grid -->
+        <div class="grid-container">
+            <div class="tutorials-grid">
+                <!-- Row 1 -->
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel 11 CRUD Application Tutorial</a>
+                    <div class="post-meta">
+                        <span>📅 Dec 1, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 15 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Learn how to create a complete CRUD application in Laravel 11. Step-by-step guide for beginners.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel 11 Authentication with Breeze</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 25, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 8 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Implement authentication in Laravel 11 using Breeze. Includes login, registration, password reset.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel 11 REST API with Passport</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 22, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 31 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Build a secure REST API using Laravel Passport for token-based authentication.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+
+                <!-- Row 2 -->
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel 11 File Upload with Validation</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 28, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 22 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Learn how to upload images in Laravel 11 with validation and proper storage techniques.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel Blade Components Tutorial</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 20, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 10 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Learn how to use Blade components to create reusable UI elements in Laravel.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel 11 Eloquent Relationships</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 18, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 12 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Understanding Eloquent relationships in Laravel 11, including one-to-one, one-to-many, and many-to-many.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+
+                <!-- Row 3 -->
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel 11 Validation Guide</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 15, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 7 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Complete guide on Laravel 11 validation rules and error handling.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel 11 Mail & Notifications</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 12, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 9 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Learn how to send emails and notifications in Laravel 11.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+                <article class="post-card">
+                    <a href="blog-detail.html" class="post-title">Laravel 11 Task Scheduling</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 10, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 5 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Step-by-step guide to schedule tasks and cron jobs in Laravel 11.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="prev">« Previous</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#" class="next">Next »</a>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">Categories</h3>
+                <ul>
+                    <li><a href="#">Laravel (156)</a></li>
+                    <li><a href="#">PHP (89)</a></li>
+                    <li><a href="#">MySQL (45)</a></li>
+                    <li><a href="#">JavaScript (67)</a></li>
+                    <li><a href="#">Vue.js (34)</a></li>
+                    <li><a href="#">jQuery (52)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>LaravelSolutionStuff provides high-quality tutorials, examples, and solutions for Laravel developers. Learn Laravel with practical examples and step-by-step guides.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Examples</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Laravel</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">MySQL</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">Vue.js</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LaravelSolutionStuff. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

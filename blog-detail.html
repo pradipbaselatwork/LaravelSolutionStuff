@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laravel 11 CRUD Application Tutorial - LaravelSolutionStuff</title>
+    <link rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">LaravelSolutionStuff</a>
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="laravel-list.html">Laravel Tutorial</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <p><a href="index.html">Home</a> / <a href="#">Laravel</a> / Laravel 11 CRUD Application Tutorial</p>
+        </div>
+    </section>
+
+    <!-- Blog Detail Section -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Blog Content -->
+            <article class="blog-detail">
+                <h1 class="post-title">Laravel 11 CRUD Application Tutorial For Beginners</h1>
+                <div class="post-meta">
+                    <span>📅 Dec 1, 2024</span>
+                    <span>👤 Admin</span>
+                    <span>💬 15 Comments</span>
+                </div>
+                <img src="images/laravel-crud.jpg" alt="Laravel CRUD" class="post-image" />
+
+                <div class="post-content">
+                    <p>
+                        In this tutorial, we will learn how to create a complete CRUD (Create, Read, Update, Delete) application in Laravel 11. 
+                        We'll cover everything from setting up the database to creating routes, controllers, and views. This is perfect for beginners 
+                        who want to learn Laravel step by step.
+                    </p>
+                    <h2>Step 1: Install Laravel</h2>
+                    <p>
+                        First, make sure you have Composer installed. Then, create a new Laravel project using the command:
+                    </p>
+                    <pre><code>composer create-project laravel/laravel laravel-crud-app</code></pre>
+                    <h2>Step 2: Set Up Database</h2>
+                    <p>
+                        Configure your `.env` file with your database credentials. Then run migrations:
+                    </p>
+                    <pre><code>php artisan migrate</code></pre>
+                    <h2>Step 3: Create Routes, Controller & Views</h2>
+                    <p>
+                        We'll create a controller for CRUD operations and define routes. Then we will make blade views for listing, creating, editing, and deleting posts.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo erat id neque tristique, et faucibus urna fermentum. Vivamus vitae purus vitae velit ultrices convallis.
+                    </p>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h3>Comments (15)</h3>
+                    <div class="comment">
+                        <strong>John Doe</strong>
+                        <p>Great tutorial! Helped me understand Laravel CRUD better.</p>
+                    </div>
+                    <div class="comment">
+                        <strong>Jane Smith</strong>
+                        <p>Thank you for the clear explanations.</p>
+                    </div>
+
+                    <h4>Leave a Comment</h4>
+                    <form class="comment-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Comment" required></textarea>
+                        <button type="submit">Submit Comment</button>
+                    </form>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Categories Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul>
+                        <li><a href="#">Laravel (156)</a></li>
+                        <li><a href="#">PHP (89)</a></li>
+                        <li><a href="#">MySQL (45)</a></li>
+                        <li><a href="#">JavaScript (67)</a></li>
+                        <li><a href="#">Vue.js (34)</a></li>
+                        <li><a href="#">jQuery (52)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Recent Posts Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Recent Posts</h3>
+                    <ul>
+                        <li><a href="#">Laravel 11 CRUD Tutorial</a></li>
+                        <li><a href="#">Upload Image in Laravel</a></li>
+                        <li><a href="#">Laravel Authentication</a></li>
+                        <li><a href="#">REST API with Passport</a></li>
+                        <li><a href="#">Laravel Validation Guide</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Tags Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Popular Tags</h3>
+                    <div>
+                        <a href="#" class="tag">Laravel</a>
+                        <a href="#" class="tag">PHP</a>
+                        <a href="#" class="tag">MySQL</a>
+                        <a href="#" class="tag">CRUD</a>
+                        <a href="#" class="tag">Authentication</a>
+                        <a href="#" class="tag">API</a>
+                        <a href="#" class="tag">Validation</a>
+                        <a href="#" class="tag">Tutorial</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>LaravelSolutionStuff provides high-quality tutorials, examples, and solutions for Laravel developers. Learn Laravel with practical examples and step-by-step guides.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Examples</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Laravel</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">MySQL</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">Vue.js</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LaravelSolutionStuff. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laravel Solution Stuff - Tutorials & Examples</title>
+    <link rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">LaravelSolutionStuff</a>
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="laravel-list.html">Laravel Tutorial</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" placeholder="Search tutorials...">
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Posts Section -->
+            <div class="posts-section">
+                <article class="post-card">
+                    <a href="#" class="post-title">Laravel 11 CRUD Application Tutorial For Beginners</a>
+                    <div class="post-meta">
+                        <span>📅 Dec 1, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 15 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        In this tutorial, we will learn how to create a complete CRUD (Create, Read, Update, Delete) application in Laravel 11. 
+                        We'll cover everything from setting up the database to creating routes, controllers, and views. This is perfect for beginners 
+                        who want to learn Laravel step by step.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+
+                <article class="post-card">
+                    <a href="#" class="post-title">How to Upload Image in Laravel 11 with Validation</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 28, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 22 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Learn how to upload and store images in Laravel 11 with proper validation. We'll cover file upload handling, 
+                        image validation rules, storing images in the public directory, and displaying uploaded images in views.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+
+                <article class="post-card">
+                    <a href="#" class="post-title">Laravel 11 Authentication Tutorial Using Breeze</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 25, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 8 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        In this comprehensive guide, we'll implement authentication in Laravel 11 using Laravel Breeze. 
+                        We'll set up login, registration, password reset, and email verification features with a clean and modern UI.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+
+                <article class="post-card">
+                    <a href="#" class="post-title">Laravel 11 REST API with Passport Authentication</a>
+                    <div class="post-meta">
+                        <span>📅 Nov 22, 2024</span>
+                        <span>👤 Admin</span>
+                        <span>💬 31 Comments</span>
+                    </div>
+                    <p class="post-excerpt">
+                        Build a secure REST API in Laravel 11 using Laravel Passport for OAuth2 authentication. 
+                        We'll create API endpoints, implement token-based authentication, and test our API using Postman.
+                    </p>
+                    <a href="blog-detail.html" class="read-more">Read More →</a>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Categories Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul>
+                        <li><a href="#">Laravel (156)</a></li>
+                        <li><a href="#">PHP (89)</a></li>
+                        <li><a href="#">MySQL (45)</a></li>
+                        <li><a href="#">JavaScript (67)</a></li>
+                        <li><a href="#">Vue.js (34)</a></li>
+                        <li><a href="#">jQuery (52)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Recent Posts Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Recent Posts</h3>
+                    <ul>
+                        <li><a href="#">Laravel 11 CRUD Tutorial</a></li>
+                        <li><a href="#">Upload Image in Laravel</a></li>
+                        <li><a href="#">Laravel Authentication</a></li>
+                        <li><a href="#">REST API with Passport</a></li>
+                        <li><a href="#">Laravel Validation Guide</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Tags Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Popular Tags</h3>
+                    <div>
+                        <a href="#" class="tag">Laravel</a>
+                        <a href="#" class="tag">PHP</a>
+                        <a href="#" class="tag">MySQL</a>
+                        <a href="#" class="tag">CRUD</a>
+                        <a href="#" class="tag">Authentication</a>
+                        <a href="#" class="tag">API</a>
+                        <a href="#" class="tag">Validation</a>
+                        <a href="#" class="tag">Tutorial</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>LaravelSolutionStuff provides high-quality tutorials, examples, and solutions for Laravel developers. Learn Laravel with practical examples and step-by-step guides.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Examples</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Laravel</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">MySQL</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">Vue.js</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LaravelSolutionStuff. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

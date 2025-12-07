@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel 11 CRUD Application Tutorial - LaravelSolutionStuff</title>
-    <link rel="stylesheet" href="css/global.css" />
+    <title>Laravel 12 ACL - Roles and Permissions Example - LaravelSolutionStuff</title>
+    <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
     <!-- Header -->
@@ -28,67 +28,99 @@
     <!-- Breadcrumb -->
     <section class="breadcrumb">
         <div class="container">
-            <p><a href="index.html">Home</a> / <a href="#">Laravel</a> / Laravel 11 CRUD Application Tutorial</p>
+            <p><a href="index.html">Home</a> / <a href="#">Laravel</a> / Laravel 12 ACL - Roles & Permissions Example</p>
         </div>
     </section>
 
-    <!-- Blog Detail Section -->
+    <!-- Main Content -->
     <div class="container">
         <div class="main-content">
             <!-- Blog Content -->
             <article class="blog-detail">
-                <h1 class="post-title">Laravel 11 CRUD Application Tutorial For Beginners</h1>
+                <h1 class="post-title">Laravel 12 ACL - Roles and Permissions Example</h1>
                 <div class="post-meta">
-                    <span>📅 Dec 1, 2024</span>
+                    <span>📅 Dec 3, 2025</span>
                     <span>👤 Admin</span>
-                    <span>💬 15 Comments</span>
+                    <span>💬 0 Comments</span>
                 </div>
-                <img src="images/laravel-crud.jpg" alt="Laravel CRUD" class="post-image" />
+
+                <!-- Professional Images -->
+                 <img src="images/laravel-crud.png" alt="Laravel ACL Overview" class="post-image">
+                <!-- <img src="images/laravel-crud.png" alt="Laravel ACL Overview" class="post-image"> -->
+
+                <!-- <img src="images/laravel-crud.png" alt="Laravel ACL Overview" class="post-image"> -->
+                <!-- <img src="images/laravel-routes.png" alt="Roles and Permissions" class="post-image"> -->
 
                 <div class="post-content">
                     <p>
-                        In this tutorial, we will learn how to create a complete CRUD (Create, Read, Update, Delete) application in Laravel 11. 
-                        We'll cover everything from setting up the database to creating routes, controllers, and views. This is perfect for beginners 
-                        who want to learn Laravel step by step.
+                        In this tutorial, we will implement ACL (Access Control List) in Laravel 12 using roles and permissions. 
+                        We'll use the <code>spatie/laravel-permission</code> package to manage roles, permissions, and assign them to users.
                     </p>
-                    <h2>Step 1: Install Laravel</h2>
-                    <p>
-                        First, make sure you have Composer installed. Then, create a new Laravel project using the command:
-                    </p>
-                    <pre><code>composer create-project laravel/laravel laravel-crud-app</code></pre>
-                    <h2>Step 2: Set Up Database</h2>
-                    <p>
-                        Configure your `.env` file with your database credentials. Then run migrations:
-                    </p>
-                    <pre><code>php artisan migrate</code></pre>
-                    <h2>Step 3: Create Routes, Controller & Views</h2>
-                    <p>
-                        We'll create a controller for CRUD operations and define routes. Then we will make blade views for listing, creating, editing, and deleting posts.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo erat id neque tristique, et faucibus urna fermentum. Vivamus vitae purus vitae velit ultrices convallis.
-                    </p>
-                </div>
 
-                <!-- Comments Section -->
-                <div class="comments-section">
-                    <h3>Comments (15)</h3>
-                    <div class="comment">
-                        <strong>John Doe</strong>
-                        <p>Great tutorial! Helped me understand Laravel CRUD better.</p>
-                    </div>
-                    <div class="comment">
-                        <strong>Jane Smith</strong>
-                        <p>Thank you for the clear explanations.</p>
-                    </div>
+                    <h2>Step-by-Step Guide</h2>
+                    <ol style="list-style-type:none;">
+                        <li><strong>Step 1:</strong> Install Laravel 12</li>
+                        <li><strong>Step 2:</strong> Install <code>spatie/laravel-permission</code> Package</li>
+                        <li><strong>Step 3:</strong> Create Product Migration</li>
+                        <li><strong>Step 4:</strong> Create Models</li>
+                        <li><strong>Step 5:</strong> Add Middleware</li>
+                        <li><strong>Step 6:</strong> Create Authentication</li>
+                        <li><strong>Step 7:</strong> Create Routes</li>
+                        <li><strong>Step 8:</strong> Add Controllers</li>
+                        <li><strong>Step 9:</strong> Add Blade Files</li>
+                        <li><strong>Step 10:</strong> Create Seeder For Permissions and Admin User</li>
+                        <li><strong>Step 11:</strong> Run Laravel Application</li>
+                    </ol>
 
-                    <h4>Leave a Comment</h4>
-                    <form class="comment-form">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Comment" required></textarea>
-                        <button type="submit">Submit Comment</button>
-                    </form>
+                    <h2>Laravel 12 ACL Coding Part</h2>
+                    <p>Below are the coding steps after installing Laravel and setting up roles and permissions:</p>
+
+                    <h3>Install Package & Configure</h3>
+                    <pre class="code-block vscode-block"><code class="language-bash">
+composer require spatie/laravel-permission
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+php artisan migrate
+                    </code></pre>
+
+                    <h3>Create Models & Relationships</h3>
+                    <pre class="code-block vscode-block"><code class="language-php">
+// User.php
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable {
+    use HasRoles;
+}
+                    </code></pre>
+
+                    <h3>Add Middleware to Routes</h3>
+                    <pre class="code-block vscode-block"><code class="language-php">
+// web.php
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+});
+                    </code></pre>
+
+                    <h3>Create Seeder for Roles & Permissions</h3>
+                    <pre class="code-block vscode-block"><code class="language-php">
+// DatabaseSeeder.php
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+Role::create(['name' => 'admin']);
+Permission::create(['name' => 'edit products']);
+                    </code></pre>
+
+                    <h3>Create Controllers & Views</h3>
+                    <pre class="code-block vscode-block"><code class="language-php">
+// ProductController.php
+public function index() {
+    $products = Product::all();
+    return view('products.index', compact('products'));
+}
+                    </code></pre>
+
+                    <p>Follow these steps carefully and you will have a fully functional ACL system in Laravel 12 with roles and permissions.</p>
                 </div>
             </article>
 
@@ -111,8 +143,8 @@
                 <div class="widget">
                     <h3 class="widget-title">Recent Posts</h3>
                     <ul>
-                        <li><a href="#">Laravel 11 CRUD Tutorial</a></li>
-                        <li><a href="#">Upload Image in Laravel</a></li>
+                        <li><a href="#">Laravel 12 ACL Tutorial</a></li>
+                        <li><a href="#">Laravel CRUD Tutorial</a></li>
                         <li><a href="#">Laravel Authentication</a></li>
                         <li><a href="#">REST API with Passport</a></li>
                         <li><a href="#">Laravel Validation Guide</a></li>
@@ -124,13 +156,12 @@
                     <h3 class="widget-title">Popular Tags</h3>
                     <div>
                         <a href="#" class="tag">Laravel</a>
+                        <a href="#" class="tag">ACL</a>
+                        <a href="#" class="tag">Roles</a>
+                        <a href="#" class="tag">Permissions</a>
+                        <a href="#" class="tag">Spatie</a>
                         <a href="#" class="tag">PHP</a>
-                        <a href="#" class="tag">MySQL</a>
                         <a href="#" class="tag">CRUD</a>
-                        <a href="#" class="tag">Authentication</a>
-                        <a href="#" class="tag">API</a>
-                        <a href="#" class="tag">Validation</a>
-                        <a href="#" class="tag">Tutorial</a>
                     </div>
                 </div>
             </aside>
@@ -167,11 +198,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 LaravelSolutionStuff. All rights reserved.</p>
+                <p>&copy; 2025 LaravelSolutionStuff. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
